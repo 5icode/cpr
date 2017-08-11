@@ -65,6 +65,12 @@ cpr_option(USE_SYSTEM_GTEST
 cpr_option(CMAKE_USE_OPENSSL "Use OpenSSL code. Experimental" ON)
 message(STATUS "=======================================================")
 
+# Activate System CURL for CPR project
+set(USE_SYSTEM_CURL ON CACHE BOOL "Prevent CPR from building CURL from source")
+# Activate System Googletest for CPR project
+set(USE_SYSTEM_GTEST ON CACHE BOOL "Prevent CPR from building Googletest from source")
+set(BUILD_CPR_TESTS OFF CACHE BOOL "Prevent CPR from building CPR test source to save build time")
+
 if(BUILD_CPR_TESTS)
     enable_testing()
 endif()
